@@ -146,13 +146,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Log.e("ysq打印", "sendMsg = " + s);
         if (!TextUtils.isEmpty(s))
             if (webSocketConnection != null) {
-                Handler h = new Handler(Looper.getMainLooper());
-                h.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        webSocketConnection.sendTextMessage(s);
-                    }
-                });
+                webSocketConnection.sendTextMessage(s);
             }
     }
 
