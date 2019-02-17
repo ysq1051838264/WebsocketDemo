@@ -119,6 +119,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         case 1:
                             break;
                         case 2:
+                            //连接超时
                             break;
                         case 3://手动断开连接
                             if (!isExitApp) {
@@ -126,6 +127,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             }
                             break;
                         case 4:
+                            //违背websocket协议
+                            closeWebsocket(false);
+                            webSocketConnect();
                             break;
                         case 5://网络断开连接
                             closeWebsocket(false);
